@@ -32,9 +32,6 @@ func (u *UI) DrawMenu(screen *ebiten.Image) {
 	instructionText := "Presiona ESPACIO para comenzar"
 	ebitenutil.DebugPrintAt(screen, instructionText, config.ScreenWidth/2-140, config.ScreenHeight/2)
 	
-	// Créditos
-	creditsText := "Concurrency Patterns Demo"
-	ebitenutil.DebugPrintAt(screen, creditsText, config.ScreenWidth/2-100, config.ScreenHeight-50)
 }
 
 // DrawCountdown dibuja el countdown
@@ -85,11 +82,7 @@ func (u *UI) DrawHUD(screen *ebiten.Image, race *core.Race) {
 			}
 			posText := fmt.Sprintf("Auto %d: %.0f px%s", id, state.Position, status)
 			
-			// Color según el estado
-			if state.Finished {
-				// No hay una forma fácil de cambiar el color con DebugPrintAt
-				// pero podemos indicarlo con el texto
-			}
+			
 			
 			ebitenutil.DebugPrintAt(screen, posText, 10, y)
 			y += 20

@@ -133,11 +133,6 @@ func (g *Game) drawCars(screen *ebiten.Image) {
 		op.GeoM.Translate(x, y)
 		op.GeoM.Scale(1,1)
 		
-		// Si el auto terminó, podríamos aplicar algún efecto visual
-		if state.Finished {
-			// Opcional: hacer que parpadee o cambiar opacidad
-			// op.ColorM.Scale(1, 1, 1, 0.7)
-		}
 		
 		screen.DrawImage(sprite, op)
 	}
