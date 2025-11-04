@@ -59,10 +59,7 @@ func (m *RaceManager) StartRace() {
 	// FAN-OUT: Lanzar una goroutine por cada auto
 	for _, car := range m.cars {
 		m.wg.Add(1)
-		go func(c *Car) {
-			defer m.wg.Done()
-			c.Run()
-		}(car)
+		go m.runCar(car)
 	}
 	
 	m.logger.Info("Manager: Todas las goroutines de autos lanzadas")
@@ -71,6 +68,12 @@ func (m *RaceManager) StartRace() {
 	go m.collectResults()
 	
 	m.logger.Debug("Manager: Goroutine de recolección iniciada")
+}
+
+// runCar ejecuta la lógica de un auto dentro de una goroutine
+func (m *RaceManager) runCar(c *Car) {
+	defer m.wg.Done()
+	c.Run()
 }
 
 // ReleaseStartSignal libera a todos los autos para que empiecen a correr
