@@ -63,7 +63,7 @@ El proyecto sigue una arquitectura en capas:
 
 ##  Patrones de Concurrencia
 
-### 1. Fan-Out Pattern (Dispersión)
+### 1. Fan-Out Pattern 
 
 **Concepto**: Múltiples goroutines se lanzan desde un punto central para ejecutar trabajo en paralelo.
 
@@ -86,7 +86,7 @@ func (m *RaceManager) StartRace() {
 
 ---
 
-### 2. Fan-In Pattern (Convergencia)
+### 2. Fan-In Pattern 
 
 **Concepto**: Múltiples goroutines envían resultados a un punto central de recolección.
 
@@ -241,13 +241,7 @@ go run src/main.go
 - **Motor Gráfico**: [Ebiten](https://ebitengine.org/)
 - **Patrones**: Concurrencia con goroutines, canales y mutexes
 
----
 
-##  Licencia
-
-Este proyecto está bajo la Licencia MIT.
-
----
 
 ##  Autor
 
